@@ -1,0 +1,7 @@
+D:\ASP.net_EF\EFAppli11\EFAppli11\bin\EFAppli11.dll
+D:\ASP.net_EF\EFAppli11\EFAppli11\bin\EFAppli11.pdb
+D:\ASP.net_EF\EFAppli11\EFAppli11\bin\EntityFramework.dll
+D:\ASP.net_EF\EFAppli11\EFAppli11\bin\EntityFramework.xml
+D:\ASP.net_EF\EFAppli11\EFAppli11\obj\Debug\EFAppli11.csprojResolveAssemblyReference.cache
+D:\ASP.net_EF\EFAppli11\EFAppli11\obj\Debug\EFAppli11.dll
+D:\ASP.net_EF\EFAppli11\EFAppli11\obj\Debug\EFAppli11.pdb

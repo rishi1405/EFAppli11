@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmplModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="EmplModelStoreContainer">
+    <EntitySet Name="Empl" EntityType="EmplModel.Store.Empl" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__Empl__ManagerID__29572725" Association="EmplModel.Store.FK__Empl__ManagerID__29572725">
+      <End Role="Empl" EntitySet="Empl" />
+      <End Role="Empl1" EntitySet="Empl" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Empl">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ManagerID" Type="int" />
+  </EntityType>
+  <Association Name="FK__Empl__ManagerID__29572725">
+    <End Role="Empl" Type="EmplModel.Store.Empl" Multiplicity="0..1" />
+    <End Role="Empl1" Type="EmplModel.Store.Empl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empl">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="Empl1">
+        <PropertyRef Name="ManagerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

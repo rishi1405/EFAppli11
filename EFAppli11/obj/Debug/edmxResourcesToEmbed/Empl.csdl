@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmplModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EmplDBContext" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Empls" EntityType="EmplModel.Empl" />
+    <AssociationSet Name="FK__Empl__ManagerID__29572725" Association="EmplModel.FK__Empl__ManagerID__29572725">
+      <End Role="Empl" EntitySet="Empls" />
+      <End Role="Empl1" EntitySet="Empls" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Empl">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ManagerID" Type="Int32" />
+    <NavigationProperty Name="Subordinates" Relationship="EmplModel.FK__Empl__ManagerID__29572725" FromRole="Empl" ToRole="Empl1" />
+    <NavigationProperty Name="Manager" Relationship="EmplModel.FK__Empl__ManagerID__29572725" FromRole="Empl1" ToRole="Empl" />
+  </EntityType>
+  <Association Name="FK__Empl__ManagerID__29572725">
+    <End Role="Empl" Type="EmplModel.Empl" Multiplicity="0..1" />
+    <End Role="Empl1" Type="EmplModel.Empl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empl">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="Empl1">
+        <PropertyRef Name="ManagerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
